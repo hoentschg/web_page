@@ -674,6 +674,7 @@ function initLanguageSwitcher(audioEngine) {
       waTitle: 'Guardia Técnica Quimera',
       waSub: 'SOC En línea • Respuesta en < 15 min',
       waBubble: '👋 Hola. Bienvenido al centro de respuesta de <strong>Quimera</strong>. ¿Cómo podemos ayudarte hoy?',
+      waDirect: '💬 Chatear Directo (+591 69491000)',
       waEmergency: '🚨 Reportar Incidente de Emergencia',
       waQuote: '💼 Cotizar Blindaje / Software a Medida',
       waSchedule: '📅 Agendar Diagnóstico Técnico Gratuito',
@@ -731,6 +732,7 @@ function initLanguageSwitcher(audioEngine) {
       waTitle: 'Quimera SOC Duty Engineer',
       waSub: 'SOC Online • SLA Response < 15 min',
       waBubble: '👋 Hello. Welcome to <strong>Quimera</strong> incident response center. How can we assist your enterprise today?',
+      waDirect: '💬 Direct Chat on WhatsApp (+591 69491000)',
       waEmergency: '🚨 Report Emergency Cyber Incident',
       waQuote: '💼 Request Defense / Custom Software Quote',
       waSchedule: '📅 Schedule Free Technical Assessment',
@@ -841,12 +843,15 @@ function initLanguageSwitcher(audioEngine) {
     const waBubble = document.querySelector('.wa-bubble');
     if (waBubble && dict.waBubble) waBubble.innerHTML = dict.waBubble;
 
-    const waBtns = document.querySelectorAll('.wa-quick-actions .wa-action-btn');
-    if (waBtns.length >= 3) {
-      if (dict.waEmergency) waBtns[0].textContent = dict.waEmergency;
-      if (dict.waQuote) waBtns[1].textContent = dict.waQuote;
-      if (dict.waSchedule) waBtns[2].textContent = dict.waSchedule;
-    }
+    const waBtnDirect = document.querySelector('.wa-action-btn.wa-direct');
+    const waBtnEmergency = document.querySelector('.wa-action-btn.wa-emergency');
+    const waBtnQuote = document.querySelector('.wa-action-btn.wa-quote');
+    const waBtnSchedule = document.querySelector('.wa-action-btn.wa-schedule');
+
+    if (waBtnDirect && dict.waDirect) waBtnDirect.textContent = dict.waDirect;
+    if (waBtnEmergency && dict.waEmergency) waBtnEmergency.textContent = dict.waEmergency;
+    if (waBtnQuote && dict.waQuote) waBtnQuote.textContent = dict.waQuote;
+    if (waBtnSchedule && dict.waSchedule) waBtnSchedule.textContent = dict.waSchedule;
 
     // Actualizar cada pregunta y respuesta del acordeón
     const faqElements = document.querySelectorAll('.faq-item');
