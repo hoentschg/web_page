@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIMERA | Ciberseguridad, Desarrollo de Software a Medida & Soporte 24/7</title>
+  <meta name="description" content="Quimera asegura la información de las empresas contra pérdidas y robos. Creamos aplicaciones 100% personalizadas para cualquier sector y brindamos soporte técnico corporativo especializado 24/7.">
+  <meta name="keywords" content="ciberseguridad, protección de datos, desarrollo a medida, soporte técnico empresas, zero-trust, software corporativo">
+
+  <!-- Meta tags esenciales y SEO -->
+  <meta name="theme-color" content="#06090a">
+  <link rel="canonical" href="https://quimera.tech/">
+
+  <!-- Open Graph / WhatsApp / LinkedIn -->
+  <meta property="og:title" content="QUIMERA | Ciberseguridad, Desarrollo de Software & Soporte 24/7">
+  <meta property="og:description" content="Aseguramos la información de tu empresa contra pérdidas y robos. Aplicaciones 100% personalizadas y soporte de ingeniería 24/7.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quimera.tech/">
+  <meta property="og:image" content="./assets/marca-quimera-emblem.png">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="QUIMERA | Ciberseguridad, Desarrollo de Software & Soporte 24/7">
+  <meta name="twitter:description" content="Aseguramos la información de tu empresa contra pérdidas y robos. Aplicaciones 100% personalizadas y soporte de ingeniería 24/7.">
+  <meta name="twitter:image" content="./assets/marca-quimera-emblem.png">
+
+  <!-- Schema.org JSON-LD Estructurado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Quimera Technologies",
+    "alternateName": "Quimera Proyectos y Servicios Informáticos",
+    "description": "Blindaje de información corporativa, prevención de ransomware, desarrollo de software personalizado y soporte técnico especializado 24/7.",
+    "url": "https://quimera.tech",
+    "logo": "https://quimera.tech/assets/marca-quimera-emblem.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Emergency Technical Support & Cybersecurity",
+      "availableLanguage": ["Spanish", "English"]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué ocurre si nuestra empresa ya cuenta con un departamento de informática o TI interno?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quimera no reemplaza a tu equipo, lo blinda y lo potencia. Actuamos como su brazo de élite en ciberdefensa avanzada, pruebas continuas de penetración, bóvedas criptográficas y guardia nocturna/fines de semana (24/7/365)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Nuestra información sensible sale de la empresa o se almacena en la nube de Quimera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tú mantienes la soberanía absoluta de tus datos y llaves. Diseñamos infraestructuras híbridas, on-premise o en nube privada exclusiva para tu empresa con llaves AES-256 bajo tu custodia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo garantiza la tecnología WORM que ningún Ransomware pueda secuestrar o borrar los backups?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WORM (Write Once, Read Many) es un bloqueo a nivel de kernel y firmware. Una vez generado el snapshot, ningún usuario, administrador o malware root puede cifrar, renombrar o borrar los datos durante el plazo fijado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿El código fuente y las aplicaciones desarrolladas a medida pasan a ser 100% de nuestra propiedad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, de forma total y contractualmente garantizada. Entregamos repositorios, documentación técnica y derechos de explotación intelectual al finalizar cada proyecto. Rechazamos el vendor lock-in."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo aseguran un tiempo de respuesta menor a 15 minutos ante emergencias técnicas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mediante un SOC activo las 24 horas con ingenieros senior de guardia real, con telemetría perimetral que dispara alertas inmediatas ante anomalías."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo demora la puesta en marcha inicial del blindaje de una empresa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Blindaje preventivo de choque en las primeras 24 horas. Auditoría profunda y arquitectura Zero-Trust integral en un plazo de 7 a 10 días hábiles sin detener la operación de tu negocio."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Favicons Multi-Resolución & Cross-Browser -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg?v=2">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="./site.webmanifest?v=2">
+</head>
+<body>
+
+  <!-- Custom Cursor Followers -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-follower" aria-hidden="true"></div>
+
+  <!-- Ambient Light Effects -->
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+  <div class="cyber-grid-overlay" aria-hidden="true"></div>
+
+  <!-- Interactive 3D WebGL Canvas (Background / Core) -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <div class="app-container">
+
+    <!-- ====================================================================
+         HEADER NAVIGATION (Lusion Minimal Glassmorphism Style)
+         ==================================================================== -->
+    <header id="header">
+      <div class="header-inner">
+        <!-- Logo Quimera Oficial -->
+        <a href="#hero" class="brand-logo" id="header-logo-link" title="Quimera - Proyectos y Servicios Informáticos">
+          <img src="./assets/quimera-logo-dark.png" alt="Quimera - Proyectos y Servicios Informáticos" class="brand-logo-img">
+        </a>
+
+        <!-- Navigation Links -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#pilares" class="nav-link">Servicios</a></li>
+            <li><a href="#simulador" class="nav-link">Simulador de Ataques</a></li>
+            <li><a href="#calculadora" class="nav-link">Diagnóstico</a></li>
+            <li><a href="#concepto" class="nav-link">Nosotros</a></li>
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <!-- Language Switcher ES / EN -->
+          <button class="lang-switch-btn" id="lang-switch-btn" aria-label="Cambiar idioma español / inglés" title="Switch language (ES / EN)">
+            <span class="lang-text active" data-lang="es">ES</span>
+            <span class="lang-divider">/</span>
+            <span class="lang-text" data-lang="en">EN</span>
+          </button>
+
+          <!-- Audio Synthesizer Toggle -->
+          <button class="btn-sound" id="btn-sound-toggle" aria-label="Activar / Desactivar Sonido" title="Activar sonido inmersivo">
+            <canvas id="sound-canvas"></canvas>
+          </button>
+
+          <!-- CTA Pill -->
+          <a href="#contacto" class="btn-pill-primary btn-open-contact" id="btn-header-cta">
+            <span>Iniciar Blindaje</span>
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         HERO SECTION
+         ==================================================================== -->
+    <main>
+      <section class="hero-section" id="hero">
+        <div class="section-wrap">
+          <div class="hero-grid">
+            
+            <!-- Left Hero Content -->
+            <div class="hero-content">
+              <div class="hero-pill-badge">
+                <span class="status-dot"></span>
+                <span>PROTECCIÓN DE INFORMACIÓN & INGENIERÍA DIGITAL DE ÉLITE</span>
+              </div>
+
+              <h1 class="hero-title">
+                Blindamos tus datos.<br>
+                <span class="text-gradient">Construimos tu futuro digital.</span>
+              </h1>
+
+              <p class="hero-description">
+                Aseguramos la información de tu empresa para que <strong>nunca la pierdas ni nadie pueda robártela</strong>. Desarrollamos <strong>aplicaciones 100% personalizadas</strong> para cualquier industria y respaldamos tu operación con <strong>soporte técnico corporativo 24/7</strong>.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#pilares" class="btn-pill-primary btn-glow" id="btn-hero-explore">
+                  <span>Conocer Soluciones</span>
+                  <span class="btn-arrow">↓</span>
+                </a>
+                <a href="#simulador" class="btn-secondary" id="btn-hero-sim">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <span>Simular Ataque & Defensa</span>
+                </a>
+              </div>
+            </div>
+
+
+          </div>
+
+          <!-- Hero Metrics Ticker Banner -->
+          <div class="hero-stats-ticker">
+            <div class="stat-item">
+              <div class="stat-number" data-target="100" data-suffix="%">0<span class="accent">%</span></div>
+              <div class="stat-desc">Protección contra filtración y robo de datos corporativos</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="0" data-suffix=" seg">0<span class="accent"> seg</span></div>
+              <div class="stat-desc">Pérdida de datos en snapshots WORM inmutables</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="250" data-prefix="+" data-suffix="">+0</div>
+              <div class="stat-desc">Aplicaciones y plataformas personalizadas desarrolladas</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="15" data-prefix="< " data-suffix=" min">&lt; 0<span class="accent"> min</span></div>
+              <div class="stat-desc">Tiempo de respuesta ante incidentes críticos (SLA 24/7)</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           THE 3 PILLARS (Quimera Core Capabilities)
+           ==================================================================== -->
+      <section class="section-padding" id="pilares">
+        <div class="section-wrap">
+          <div style="text-align: center; max-width: 760px; margin: 0 auto;">
+            <span class="section-tag">NUESTRA TRIPLE VENTAJA</span>
+            <h2 class="section-heading">Tres pilares de poder tecnológico para tu empresa</h2>
+            <p class="section-subheading" style="margin: 0 auto;">
+              Combinamos defensa hermética de la información, ingeniería de software sin limitaciones y respaldo operativo ininterrumpido.
+            </p>
+          </div>
+
+          <div class="pillars-grid">
+            
+            <!-- Pillar 1: Seguridad de la Información -->
+            <div class="pillar-card pillar-security" id="card-pillar-security">
+              <div class="pillar-card-glow"></div>
+              <div>
+                <div class="pillar-num">
+                  <span>// PILAR 01</span>
+                  <span class="pillar-badge">INFORMACIÓN SEGURA</span>
+                </div>
+                <div class="pillar-icon-box">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </div>
+                <h3 class="pillar-title">Seguridad de la Información</h3>
+                <p class="pillar-tagline">Tu información nunca se pierde ni nadie se la roba.</p>
+                <p class="pillar-desc">
+                  Diseñamos perímetros digitales impenetrables y bóvedas criptográficas. Implementamos prevención contra ransomware, políticas de fuga de datos (DLP) y resiliencia ante cualquier desastre.
+                </p>
+
+                <ul class="pillar-features">
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Prevención de Fuga de Datos (DLP):</strong> Control exhaustivo de exfiltración.</span>
+                  </li>
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Backups Inmutables (WORM):</strong> Copias blindadas a prueba de secuestro o borrado.</span>
+                  </li>
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Auditorías & Ethical Hacking:</strong> Pruebas de penetración continuas en tus sistemas.</span>
+                  </li>
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Arquitectura Zero-Trust:</strong> Verificación estricta de cada usuario y dispositivo.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <a href="#contacto" class="pillar-cta-link btn-open-contact" data-prefill="Seguridad de la Información y Blindaje de Datos">
+                  <span>Solicitar Auditoría de Seguridad</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Pillar 2: Desarrollo de Software a Medida -->
+            <div class="pillar-card pillar-software" id="card-pillar-software">
+              <div class="pillar-card-glow" style="background: radial-gradient(circle, rgba(157, 78, 221, 0.2) 0%, transparent 70%);"></div>
+              <div>
+                <div class="pillar-num">
+                  <span>// PILAR 02</span>
+                  <span class="pillar-badge" style="color: var(--accent-purple); border-color: rgba(157, 78, 221, 0.3);">100% PERSONALIZADO</span>
+                </div>
+                <div class="pillar-icon-box" style="color: var(--accent-purple);">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                </div>
+                <h3 class="pillar-title">Desarrollo de Software a Medida</h3>
+                <p class="pillar-tagline" style="color: var(--accent-purple);">Aplicaciones para cualquier sector, construidas exactamente como las necesitas.</p>
+                <p class="pillar-desc">
+                  Materializamos soluciones digitales personalizadas que eliminan las limitaciones del software genérico. Integramos seguridad desde la primera línea de código (DevSecOps).
+                </p>
+
+                <ul class="pillar-features">
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Para cualquier industria:</strong> Fintech, Salud, Logística, Retail, Minería, Servicios.</span>
+                  </li>
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Plataformas Web & Móviles:</strong> Sistemas transaccionales de alto tráfico y disponibilidad.</span>
+                  </li>
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Automatización & Agentes IA:</strong> Optimización inteligente de flujos de trabajo clave.</span>
+                  </li>
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Propiedad Total:</strong> Código 100% de tu empresa, sin licencias restrictivas ni costos ocultos.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <a href="#contacto" class="pillar-cta-link btn-open-contact" data-prefill="Desarrollo de Aplicaciones a Medida">
+                  <span>Cotizar Proyecto de Software</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Pillar 3: Soporte Técnico Especializado -->
+            <div class="pillar-card pillar-support" id="card-pillar-support">
+              <div class="pillar-card-glow" style="background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);"></div>
+              <div>
+                <div class="pillar-num">
+                  <span>// PILAR 03</span>
+                  <span class="pillar-badge" style="color: var(--accent-emerald); border-color: rgba(16, 185, 129, 0.3);">SOC & IT 24/7</span>
+                </div>
+                <div class="pillar-icon-box" style="color: var(--accent-emerald);">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="m9 12 2 2 4-4"/>
+                  </svg>
+                </div>
+                <h3 class="pillar-title">Soporte Técnico Especializado</h3>
+                <p class="pillar-tagline" style="color: var(--accent-emerald);">Continuidad operativa para que tu empresa nunca se detenga.</p>
+                <p class="pillar-desc">
+                  Ingenieros certificados monitoreando y protegiendo tu infraestructura en tiempo real. Resolvemos fallas críticas con tiempos de respuesta récord garantizados por contrato.
+                </p>
+
+                <ul class="pillar-features">
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Centro de Operaciones (SOC) 24/7/365:</strong> Detección proactiva antes de que ocurra una falla.</span>
+                  </li>
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>SLA Crítico &lt; 15 Minutos:</strong> Asistencia prioritaria con ingenieros de nivel 3 asignados.</span>
+                  </li>
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Gestión de Infraestructura:</strong> Servidores Cloud (AWS, Azure, GCP), On-Premise y redes.</span>
+                  </li>
+                  <li class="pillar-feature-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Disaster Recovery Plan:</strong> Recuperación instantánea ante catástrofes o fallos humanos.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <a href="#contacto" class="pillar-cta-link btn-open-contact" data-prefill="Soporte Técnico Especializado y SOC 24/7">
+                  <span>Contratar Mesa de Soporte 24/7</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           LIVE CYBER DEFENSE SIMULATOR (Interactive WOW Feature)
+           ==================================================================== -->
+      <section class="section-padding" id="simulador">
+        <div class="section-wrap">
+          <div style="text-align: center; max-width: 760px; margin: 0 auto;">
+            <span class="section-tag">CENTRO DE OPERACIONES QUIMERA</span>
+            <h2 class="section-heading">Simulador Interactivo de Amenazas y Neutralización</h2>
+            <p class="section-subheading" style="margin: 0 auto;">
+              Prueba en tiempo real cómo reacciona el protocolo Quimera cuando un ciberatacante intenta robar o destruir la información de tu organización.
+            </p>
+          </div>
+
+          <div class="simulator-wrapper">
+            <!-- Topbar -->
+            <div class="sim-topbar">
+              <div class="sim-window-controls">
+                <span class="sim-dot red"></span>
+                <span class="sim-dot yellow"></span>
+                <span class="sim-dot green"></span>
+              </div>
+              <div class="sim-bar-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+                QUIMERA SOC ENGINE v4.8.2 // CONSOLA DE DISUASIÓN
+              </div>
+              <div class="sim-status-active">
+                <span class="status-dot"></span>
+                <span>ESCUDO EN VIVO</span>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="sim-body">
+              <!-- Left: Attack Triggers -->
+              <div class="sim-controls-pane">
+                <div>
+                  <div class="sim-intro">
+                    <h4>Disparar Vector de Amenaza</h4>
+                    <p>Haz clic en cualquiera de los escenarios simulados para observar la respuesta del sistema:</p>
+                  </div>
+
+                  <div class="attack-triggers">
+                    <button class="attack-btn active" data-scenario="insider_leak" id="btn-attack-insider">
+                      <div class="attack-info">
+                        <span class="attack-name">Fuga de Información por Empleado Saliente</span>
+                        <span class="attack-sub">Descarga masiva de base de clientes y código fuente a USB / Google Drive personal.</span>
+                      </div>
+                      <span class="attack-tag">PROBAR</span>
+                    </button>
+
+                    <button class="attack-btn" data-scenario="dhcp_conflict" id="btn-attack-dhcp">
+                      <div class="attack-info">
+                        <span class="attack-name">Conflicto Masivo de Direcciones IP (Fallo DHCP)</span>
+                        <span class="attack-sub">Múltiples computadoras e impresoras desconectadas por duplicidad en el pool de direcciones.</span>
+                      </div>
+                      <span class="attack-tag">PROBAR</span>
+                    </button>
+
+                    <button class="attack-btn" data-scenario="disk_performance" id="btn-attack-disk">
+                      <div class="attack-info">
+                        <span class="attack-name">Lentitud Crítica en Equipos por Discos Obsoletos</span>
+                        <span class="attack-sub">Horas hombre perdidas por arranques de 15 minutos en estaciones de trabajo antiguas.</span>
+                      </div>
+                      <span class="attack-tag">PROBAR</span>
+                    </button>
+
+                    <button class="attack-btn" data-scenario="drp_failure" id="btn-attack-drp">
+                      <div class="attack-info">
+                        <span class="attack-name">Falta de Plan de Recuperación ante Desastres (DRP)</span>
+                        <span class="attack-sub">Tiempos de inactividad de más de 48 horas ante un corte prolongado en la sede principal.</span>
+                      </div>
+                      <span class="attack-tag">PROBAR</span>
+                    </button>
+
+                    <button class="attack-btn" data-scenario="double_extortion" id="btn-attack-extortion">
+                      <div class="attack-info">
+                        <span class="attack-name">Doble Extorsión con Amenaza de Filtración Pública</span>
+                        <span class="attack-sub">Robo previo de información confidencial antes del cifrado de servidores con cuenta regresiva.</span>
+                      </div>
+                      <span class="attack-tag">PROBAR</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="sim-telemetry-box">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-family: var(--font-mono);">
+                    <span style="color: var(--text-muted);">INTEGRIDAD DEL PERÍMETRO:</span>
+                    <span id="sim-defense-status-text" style="color: var(--accent-emerald); font-weight: 600;">PERÍMETRO BLINDADO • 100% OPERATIVO</span>
+                  </div>
+                  <div class="sim-defense-gauge">
+                    <div class="sim-defense-fill" id="sim-defense-fill"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Terminal Logs -->
+              <div class="sim-terminal-pane">
+                <div class="terminal-header">
+                  <span>TELEMETRÍA EN TIEMPO REAL</span>
+                  <span>ENCRIPTACIÓN: TLS 1.3 / ED25519</span>
+                </div>
+
+                <div class="terminal-stream" id="terminal-stream">
+                  <div class="log-entry">
+                    <span class="log-time">[SISTEMA]</span>
+                    <span class="log-type-neutralized">Quimera Security Daemon inicializado. Monitoreo perimetral activo.</span>
+                  </div>
+                  <div class="log-entry">
+                    <span class="log-time">[INFO]</span>
+                    <span class="log-type-hash">Selecciona una amenaza del panel izquierdo para ejecutar el protocolo de mitigación.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           INTERACTIVE ARCHITECTURE & READINESS CALCULATOR
+           ==================================================================== -->
+      <section class="section-padding" id="calculadora">
+        <div class="section-wrap">
+          <div style="text-align: center; max-width: 760px; margin: 0 auto;">
+            <span class="section-tag">DIAGNÓSTICO PERSONALIZADO</span>
+            <h2 class="section-heading">Configura la solución ideal para tu organización</h2>
+            <p class="section-subheading" style="margin: 0 auto;">
+              Elige tu sector, el tamaño de tu equipo y tu necesidad prioritaria. Te entregaremos una recomendación técnica inmediata.
+            </p>
+          </div>
+
+          <div class="calculator-box">
+            <!-- Left: Options Selector -->
+            <div>
+              <div class="calc-step-title">
+                <span style="color: var(--accent-cyan); font-family: var(--font-mono);">01.</span>
+                <span>¿A qué sector pertenece tu empresa?</span>
+              </div>
+              <div class="calc-pills-group">
+                <button class="calc-pill calc-pill-sector selected" data-val="Finanzas y Fintech">Finanzas & Fintech</button>
+                <button class="calc-pill calc-pill-sector" data-val="Salud y Medicina">Salud & Clínicas</button>
+                <button class="calc-pill calc-pill-sector" data-val="Logística y Transporte">Logística & Cadena</button>
+                <button class="calc-pill calc-pill-sector" data-val="Retail y E-commerce">Retail & Comercio</button>
+                <button class="calc-pill calc-pill-sector" data-val="Minería e Industria">Minería & Energía</button>
+                <button class="calc-pill calc-pill-sector" data-val="Tecnología y Servicios">Tecnología & SaaS</button>
+              </div>
+
+              <div class="calc-step-title">
+                <span style="color: var(--accent-cyan); font-family: var(--font-mono);">02.</span>
+                <span>Dimensión de colaboradores e infraestructura</span>
+              </div>
+              <div class="calc-pills-group">
+                <button class="calc-pill calc-pill-size" data-val="Pequeña (1-25)">1 a 25 personas</button>
+                <button class="calc-pill calc-pill-size selected" data-val="Mediana (26-150)">26 a 150 personas</button>
+                <button class="calc-pill calc-pill-size" data-val="Corporativa (150-500)">150 a 500 personas</button>
+                <button class="calc-pill calc-pill-size" data-val="Enterprise (+500)">+500 Enterprise</button>
+              </div>
+
+              <div class="calc-step-title">
+                <span style="color: var(--accent-cyan); font-family: var(--font-mono);">03.</span>
+                <span>¿Cuál es tu necesidad crítica hoy?</span>
+              </div>
+              <div class="calc-pills-group">
+                <button class="calc-pill calc-pill-need selected" data-val="Seguridad">Protección de Datos & Anti-Robo</button>
+                <button class="calc-pill calc-pill-need" data-val="Software">Crear una Aplicación a Medida</button>
+                <button class="calc-pill calc-pill-need" data-val="Soporte">Soporte Técnico 24/7 Especializado</button>
+                <button class="calc-pill calc-pill-need" data-val="Integral">Blindaje Integral Quimera 360°</button>
+              </div>
+            </div>
+
+            <!-- Right: Dynamic Architecture Result -->
+            <div class="calc-result-card">
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan); letter-spacing: 0.1em; text-transform: uppercase;">
+                  ÍNDICE DE RESILIENCIA PROYECTADA
+                </span>
+
+                <div class="calc-score-display">
+                  <div class="calc-score-number" id="calc-score-val">99%</div>
+                  <div class="calc-score-label">Protección & Eficiencia Asegurada</div>
+                </div>
+
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                  Arquitectura recomendada para tu empresa:
+                </p>
+
+                <ul class="calc-recommendation-list" id="calc-roadmap-list">
+                  <!-- Dynamically populated -->
+                </ul>
+              </div>
+
+              <div>
+                <button class="btn-pill-primary btn-open-contact" id="calc-action-btn" style="width: 100%; justify-content: center;">
+                  <span>Solicitar Propuesta Técnica</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           THE QUIMERA CONCEPT (Identity & Fusion)
+           ==================================================================== -->
+      <section class="section-padding" id="concepto">
+        <div class="section-wrap">
+          <div class="concept-grid">
+            
+            <div class="concept-visual-frame">
+              <!-- Quimera Official Brand Emblem Showcase -->
+              <div style="position: relative; display: inline-block; padding: 1.5rem;">
+                <img src="./assets/marca-quimera-emblem.png" alt="Quimera Isotipo y Marca" style="max-width: 270px; width: 100%; height: auto; filter: drop-shadow(0 0 30px rgba(22, 137, 147, 0.45));">
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan-bright); margin-top: 1rem; letter-spacing: 0.08em;">
+                // LA TRÍADA DE PODER: SEGURIDAD • SOFTWARE • SOPORTE
+              </div>
+            </div>
+
+            <div class="concept-content">
+              <span class="section-tag">NUESTRA ESENCIA</span>
+              <h2 class="section-heading">¿Por qué Quimera?</h2>
+              <p class="section-subheading" style="margin-bottom: 2.5rem;">
+                En la mitología clásica, la Quimera era un ser formidable que fusionaba la ferocidad del león, la resistencia del dragón y la agilidad de la serpiente. En el mundo corporativo contemporáneo, encarnamos esa misma fusión de fuerzas complementarias:
+              </p>
+
+              <div class="concept-traits">
+                <div class="trait-item">
+                  <div class="trait-icon-wrapper">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  </div>
+                  <div class="trait-content">
+                    <h4>El Escudo Inquebrantable (Seguridad)</h4>
+                    <p>La guardia protectora que vela sobre cada byte de tu empresa, garantizando confidencialidad e integridad absoluta.</p>
+                  </div>
+                </div>
+
+                <div class="trait-item">
+                  <div class="trait-icon-wrapper" style="color: var(--accent-purple);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                  </div>
+                  <div class="trait-content">
+                    <h4>La Capacidad Creadora (Software a Medida)</h4>
+                    <p>Ingeniería que trasciende límites. Desarrollamos cualquier solución que tu negocio requiera con precisión artesanal y escalabilidad masiva.</p>
+                  </div>
+                </div>
+
+                <div class="trait-item">
+                  <div class="trait-icon-wrapper" style="color: var(--accent-emerald);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  </div>
+                  <div class="trait-content">
+                    <h4>La Resiliencia Permanente (Soporte 24/7)</h4>
+                    <p>Una presencia incansable lista para responder en segundos ante cualquier desafío y mantener tus operaciones a flote.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Compliance Strip -->
+          <div class="trust-strip">
+            <div class="trust-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>ISO/IEC 27001 ALIGNED</span>
+            </div>
+            <div class="trust-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>SOC 2 TYPE II READY</span>
+            </div>
+            <div class="trust-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>GDPR & PRIVACY COMPLIANT</span>
+            </div>
+            <div class="trust-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>ZERO-TRUST ARCHITECTURE</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           FAQ SECTION (Preguntas Frecuentes Inteligentes - Punto 3)
+           ==================================================================== -->
+      <section class="section-padding" id="faq">
+        <div class="section-wrap">
+          <div style="text-align: center; max-width: 780px; margin: 0 auto 3.5rem;">
+            <span class="section-tag" id="faq-section-tag">FAQ // PREGUNTAS FRECUENTES</span>
+            <h2 class="section-heading" id="faq-section-heading">FAQ <span class="text-gradient">// Preguntas Frecuentes</span></h2>
+            <p class="section-subheading" id="faq-section-subheading" style="margin: 0 auto;">
+              Transparencia técnica absoluta sobre cómo protegemos tu información, cómo operamos y qué garantías reales respaldan tu negocio.
+            </p>
+          </div>
+
+          <div class="faq-container">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item" data-faq="1">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-1">
+                <span class="faq-badge">EQUIPO TI</span>
+                <span class="faq-title">¿Qué ocurre si nuestra empresa ya cuenta con un departamento de informática o TI interno?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-1" role="region">
+                <div class="faq-answer-inner">
+                  <p>
+                    <strong>Quimera no reemplaza a tu equipo, lo blinda y lo potencia.</strong> Actuamos como su brazo de élite en ciberdefensa avanzada, pruebas continuas de penetración, bóvedas criptográficas y guardia nocturna/fines de semana (24/7/365).
+                  </p>
+                  <p>
+                    Liberamos a tu personal de sistemas de la carga del monitoreo de alertas críticas y les proporcionamos herramientas de nivel militar (Zero-Trust, snapshots WORM inmutables) que de otro modo requerirían contratar un equipo completo de especialistas en ciberseguridad.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item" data-faq="2">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-2">
+                <span class="faq-badge">SOBERANÍA</span>
+                <span class="faq-title">¿Nuestra información sensible sale de la empresa o se almacena en la nube de Quimera?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-2" role="region">
+                <div class="faq-answer-inner">
+                  <p>
+                    <strong>Tú mantienes la soberanía absoluta de tus datos y llaves.</strong> Diseñamos infraestructuras híbridas, on-premise o en nube privada exclusiva para tu empresa.
+                  </p>
+                  <p>
+                    Las llaves maestras de cifrado (AES-256 GCM) residen exclusivamente bajo tu custodia. Quimera administra el blindaje, los perímetros y los protocolos, pero <em>nunca</em> tiene acceso en texto plano ni almacena tus bases de datos corporativas en servidores de terceros.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item" data-faq="3">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-3">
+                <span class="faq-badge">RANSOMWARE</span>
+                <span class="faq-title">¿Cómo garantiza la tecnología WORM que ningún Ransomware pueda secuestrar o borrar los backups?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-3" role="region">
+                <div class="faq-answer-inner">
+                  <p>
+                    WORM significa <em>Write Once, Read Many</em> (Escribe una vez, lee muchas veces). Es un bloqueo de inmutabilidad aplicado a nivel de kernel y firmware de almacenamiento.
+                  </p>
+                  <p>
+                    Una vez generado el snapshot de respaldo, <strong>ningún usuario, administrador o malware con privilegios root puede cifrar, renombrar o borrar</strong> los datos durante el plazo de retención fijado. En caso de ataque total por ransomware, levantamos tus operaciones a partir del último snapshot inmutable en cuestión de minutos, con cero pérdida de datos y sin pagar extorsiones.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item" data-faq="4">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-4">
+                <span class="faq-badge">SOFTWARE</span>
+                <span class="faq-title">¿El código fuente y las aplicaciones desarrolladas a medida pasan a ser 100% de nuestra propiedad?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-4" role="region">
+                <div class="faq-answer-inner">
+                  <p>
+                    <strong>Sí, de forma total y contractualmente garantizada.</strong> Entregamos todos los repositorios, documentación técnica, diagramas de arquitectura y derechos de explotación intelectual al finalizar cada sprint o proyecto.
+                  </p>
+                  <p>
+                    Rechazamos el <em>vendor lock-in</em>. Creemos en la fidelización a través de la excelencia en ingeniería y servicio, no reteniendo clientes como rehenes de su propio software.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item" data-faq="5">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-5">
+                <span class="faq-badge">SLA 24/7</span>
+                <span class="faq-title">¿Cómo aseguran un tiempo de respuesta menor a 15 minutos ante emergencias técnicas?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-5" role="region">
+                <div class="faq-answer-inner">
+                  <p>
+                    Mediante un <strong>SOC (Security & Network Operations Center) con guardias activas las 24 horas del día</strong>, no sistemas de contestadores automáticos.
+                  </p>
+                  <p>
+                    Nuestros sensores de red y telemetría disparan alertas automatizadas a los ingenieros de turno ante la primera anomalía de tráfico, consumo de CPU, intento de fuerza bruta o fallo de enlace. El ingeniero toma control del incidente de forma inmediata con protocolos de contención predefinidos, garantizando una respuesta en menos de 15 minutos bajo contrato.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="faq-item" data-faq="6">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-6">
+                <span class="faq-badge">PLAZOS</span>
+                <span class="faq-title">¿Cuánto tiempo demora la puesta en marcha inicial del blindaje de una empresa?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-6" role="region">
+                <div class="faq-answer-inner">
+                  <p>
+                    <strong>Blindaje preventivo de choque en las primeras 24 horas:</strong> Aislamiento de puertos expuestos, configuración inicial de copias inmutables y monitoreo perimetral de emergencia.
+                  </p>
+                  <p>
+                    El plan de auditoría profunda, análisis de vulnerabilidades, ethical hacking y configuración de la arquitectura Zero-Trust integral se completa típicamente en un plazo de 7 a 10 días hábiles, trabajando de manera completamente transparente y sin detener la operación de tu negocio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- ====================================================================
+         FOOTER
+         ==================================================================== -->
+    <footer id="footer">
+      <div class="section-wrap">
+        <div class="footer-top">
+          <!-- Col 1: Brand -->
+          <div class="footer-brand">
+            <div class="brand-logo" style="margin-bottom: 0.5rem;">
+              <img src="./assets/quimera-logo-dark.png" alt="Quimera" class="brand-logo-img" style="height: 36px;">
+            </div>
+            <p>
+              Aseguramos la información más crítica de las empresas para que nunca la pierdan ni nadie se las robe. Desarrollamos aplicaciones a medida y garantizamos continuidad 24/7.
+            </p>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan-bright);">
+              // PROYECTOS Y SERVICIOS INFORMÁTICOS • RESILIENCIA TOTAL
+            </div>
+          </div>
+
+          <!-- Col 2: Servicios -->
+          <div class="footer-col">
+            <h5>Soluciones</h5>
+            <ul class="footer-links">
+              <li><a href="#pilares" class="footer-link">Blindaje de Información</a></li>
+              <li><a href="#pilares" class="footer-link">Prevención de Pérdida (DLP)</a></li>
+              <li><a href="#pilares" class="footer-link">Backups Inmutables (WORM)</a></li>
+              <li><a href="#pilares" class="footer-link">Desarrollo de Software a Medida</a></li>
+              <li><a href="#pilares" class="footer-link">Soporte Técnico Especializado 24/7</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Plataforma -->
+          <div class="footer-col">
+            <h5>Herramientas</h5>
+            <ul class="footer-links">
+              <li><a href="#simulador" class="footer-link">Simulador de Ciberataques</a></li>
+              <li><a href="#calculadora" class="footer-link">Calculadora de Arquitectura</a></li>
+              <li><a href="#hero" class="footer-link">Visor 3D Quimera Core</a></li>
+              <li><a href="#faq" class="footer-link" id="footer-faq-link">FAQ // Preguntas Frecuentes</a></li>
+              <li><a href="#concepto" class="footer-link">Filosofía Quimera</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contacto de Emergencia -->
+          <div class="footer-col">
+            <h5>Canal Directo</h5>
+            <ul class="footer-links">
+              <li><a href="#contacto" class="footer-link btn-open-contact" style="color: var(--accent-cyan);">● Activar Protocolo de Contacto</a></li>
+              <li style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">SLA Emergencias: Inmediato</li>
+              <li style="color: var(--text-secondary); font-size: 0.85rem;">Ingenieros de Guardia 24/7</li>
+              <li><a href="#contacto" class="btn-pill-primary btn-open-contact" style="margin-top: 1rem; font-size: 0.78rem; padding: 0.5rem 1.2rem;">Hablar con un Experto</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div>
+            © 2026 Quimera Technologies Inc. Todos los derechos reservados.
+          </div>
+          <div class="footer-clock" id="footer-clock">
+            --:--:-- UTC-4
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem;">
+            PUERTO 5000 // PROTOCOLO ACTIVO
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ====================================================================
+         CONTACT MODAL / INCIDENT PROTOCOL
+         ==================================================================== -->
+    <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Cerrar modal">✕</button>
+        
+        <div class="modal-header">
+          <div class="section-tag" style="margin-bottom: 0.5rem;">PROTOCOLO CIFRADO</div>
+          <h3>Inicia el blindaje de tu empresa</h3>
+          <p>
+            Completa tus requerimientos. Un ingeniero senior de Quimera se pondrá en contacto contigo en menos de 15 minutos para iniciar el análisis o propuesta técnica.
+          </p>
+        </div>
+
+        <form class="contact-form" id="quimera-contact-form">
+          <div class="form-group">
+            <label for="contact-name">Nombre & Cargo</label>
+            <input type="text" id="contact-name" class="form-control" placeholder="Ej. Camila Valenzuela, CTO" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-company">Empresa & Sector</label>
+            <input type="text" id="contact-company" class="form-control" placeholder="Ej. Banco Digital / Empresa de Logística" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Correo Corporativo / Teléfono</label>
+            <input type="text" id="contact-email" class="form-control" placeholder="camila@empresa.com o +56 9..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Detalle de tu necesidad o consulta</label>
+            <textarea id="contact-message" class="form-control" placeholder="Describe brevemente tus sistemas, información a resguardar o software a desarrollar..." required></textarea>
+          </div>
+
+          <div id="form-status-msg" style="display: none;"></div>
+
+          <button type="submit" class="btn-pill-primary form-submit-btn">
+            <span>Enviar Requerimiento Cifrado</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ====================================================================
+       WHATSAPP BUSINESS DIRECT SOC WIDGET (PUNTO 5)
+       ==================================================================== -->
+  <div class="whatsapp-floating-widget" id="whatsapp-widget">
+    <!-- Mini Popover Card -->
+    <div class="whatsapp-popover" id="whatsapp-popover" aria-hidden="true">
+      <div class="whatsapp-popover-header">
+        <div class="whatsapp-popover-avatar">
+          <span class="wa-avatar-icon">🛡️</span>
+          <span class="wa-status-dot"></span>
+        </div>
+        <div>
+          <div class="whatsapp-popover-title">Guardia Técnica Quimera</div>
+          <div class="whatsapp-popover-sub">SOC En línea • Respuesta en &lt; 15 min</div>
+        </div>
+        <button class="whatsapp-popover-close" id="wa-popover-close" aria-label="Cerrar chat">✕</button>
+      </div>
+      <div class="whatsapp-popover-body">
+        <p class="wa-bubble">
+          👋 Hola. Bienvenido al centro de respuesta de <strong>Quimera</strong>. ¿Cómo podemos ayudarte hoy?
+        </p>
+        <div class="wa-quick-actions">
+          <a href="https://wa.me/56900000000?text=Hola%20Quimera,%20necesito%20atenci%C3%B3n%20urgente%20por%20un%20incidente%20de%20ciberseguridad" target="_blank" rel="noopener noreferrer" class="wa-action-btn wa-emergency">
+            🚨 Reportar Incidente de Emergencia
+          </a>
+          <a href="https://wa.me/56900000000?text=Hola%20Quimera,%20me%20gustar%C3%ADa%20cotizar%20blindaje%20de%20datos%20y%20desarrollo%20a%20medida" target="_blank" rel="noopener noreferrer" class="wa-action-btn">
+            💼 Cotizar Blindaje / Software a Medida
+          </a>
+          <a href="https://wa.me/56900000000?text=Hola%20Quimera,%20quisiera%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20gratuito" target="_blank" rel="noopener noreferrer" class="wa-action-btn">
+            📅 Agendar Diagnóstico Técnico Gratuito
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trigger Button -->
+    <button class="whatsapp-trigger-btn" id="whatsapp-trigger-btn" aria-label="Abrir chat directo con Ingeniería Quimera" title="Hablar con un Ingeniero de Guardia en WhatsApp">
+      <span class="wa-pulse-ring"></span>
+      <svg class="wa-icon-svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19.53-1.06 1.04-1.46 1.09-.4.05-.9.07-1.46-.11-.36-.12-.83-.28-1.43-.54-2.52-1.1-4.17-3.66-4.3-3.83-.13-.17-1.02-1.36-1.02-2.6 0-1.23.65-1.84.88-2.09.23-.25.5-.31.67-.31.17 0 .34 0 .49.01.15.01.36-.06.56.43.21.5.71 1.74.77 1.87.06.13.1.28.02.45-.09.17-.13.28-.26.43-.13.15-.27.34-.39.46-.13.13-.26.26-.11.52.15.26.67 1.1 1.44 1.79.99.88 1.83 1.15 2.09 1.28.26.13.41.11.56-.06.15-.17.65-.76.82-1.02.17-.26.35-.22.58-.13.24.09 1.5.71 1.76.84.26.13.43.2.49.31.07.11.07.64-.12 1.17z"/>
+      </svg>
+      <span class="whatsapp-btn-badge">1</span>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="./three-scene.js"></script>
+  <script src="./audio.js"></script>
+  <script src="./app.js"></script>
+
+</body>
+</html>
