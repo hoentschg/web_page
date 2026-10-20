@@ -1,0 +1,13 @@
+{
+  "name": "quimera-web-page",
+  "version": "1.0.0",
+  "description": "Quimera - Ciberseguridad, Desarrollo de Software a Medida y Soporte Técnico Especializado",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["cybersecurity", "software-development", "it-support", "quimera"],
+  "author": "Quimera",
+  "license": "ISC"
+}
