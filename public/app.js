@@ -674,9 +674,8 @@ function initLanguageSwitcher(audioEngine) {
       waTitle: 'Guardia Técnica Quimera',
       waSub: 'SOC En línea • Respuesta en < 15 min',
       waBubble: '👋 Hola. Bienvenido al centro de respuesta de <strong>Quimera</strong>. ¿Cómo podemos ayudarte hoy?',
-      waDirect: '💬 Chatear Directo (+591 69491000)',
+      waDirect: '💬 Chatear por WhatsApp',
       waEmergency: '🚨 Reportar Incidente de Emergencia',
-      waQuote: '💼 Cotizar Blindaje / Software a Medida',
       waSchedule: '📅 Agendar Diagnóstico Técnico Gratuito',
       faqItems: [
         {
@@ -732,9 +731,8 @@ function initLanguageSwitcher(audioEngine) {
       waTitle: 'Quimera SOC Duty Engineer',
       waSub: 'SOC Online • SLA Response < 15 min',
       waBubble: '👋 Hello. Welcome to <strong>Quimera</strong> incident response center. How can we assist your enterprise today?',
-      waDirect: '💬 Direct Chat on WhatsApp (+591 69491000)',
+      waDirect: '💬 Chat on WhatsApp',
       waEmergency: '🚨 Report Emergency Cyber Incident',
-      waQuote: '💼 Request Defense / Custom Software Quote',
       waSchedule: '📅 Schedule Free Technical Assessment',
       faqItems: [
         {
@@ -845,12 +843,10 @@ function initLanguageSwitcher(audioEngine) {
 
     const waBtnDirect = document.querySelector('.wa-action-btn.wa-direct');
     const waBtnEmergency = document.querySelector('.wa-action-btn.wa-emergency');
-    const waBtnQuote = document.querySelector('.wa-action-btn.wa-quote');
     const waBtnSchedule = document.querySelector('.wa-action-btn.wa-schedule');
 
     if (waBtnDirect && dict.waDirect) waBtnDirect.textContent = dict.waDirect;
     if (waBtnEmergency && dict.waEmergency) waBtnEmergency.textContent = dict.waEmergency;
-    if (waBtnQuote && dict.waQuote) waBtnQuote.textContent = dict.waQuote;
     if (waBtnSchedule && dict.waSchedule) waBtnSchedule.textContent = dict.waSchedule;
 
     // Actualizar cada pregunta y respuesta del acordeón
