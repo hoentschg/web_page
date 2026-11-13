@@ -572,12 +572,21 @@ function initSupportProtocolStepper(audioEngine) {
       progressFill.style.width = `${step * 10}%`;
     }
 
-    // 2. Active pill in track
+    // 2. Active pill in track (Only scroll inner horizontal container, never the window)
+    const navPills = document.getElementById('protocol-nav-pills');
     nodeButtons.forEach((btn) => {
       const btnStep = parseInt(btn.getAttribute('data-step'), 10);
       if (btnStep === step) {
         btn.classList.add('active');
-        btn.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+        if (navPills) {
+          const pillLeft = btn.offsetLeft;
+          const pillWidth = btn.offsetWidth;
+          const containerWidth = navPills.offsetWidth;
+          navPills.scrollTo({
+            left: pillLeft - containerWidth / 2 + pillWidth / 2,
+            behavior: 'smooth'
+          });
+        }
       } else {
         btn.classList.remove('active');
       }
@@ -643,10 +652,27 @@ function initSupportProtocolStepper(audioEngine) {
     renderStep(prev);
   }
 
+  let isSectionVisible = false;
+  const protocolSection = document.getElementById('protocolo-soporte');
+  if ('IntersectionObserver' in window && protocolSection) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isSectionVisible = entry.isIntersecting;
+        });
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(protocolSection);
+  } else {
+    isSectionVisible = true;
+  }
+
   function startAutoplay() {
     if (autoplayInterval) clearInterval(autoplayInterval);
     autoplayInterval = setInterval(() => {
-      if (isAutoplayActive) {
+      // Only advance automatically if the user is ACTUALLY looking at the section
+      if (isAutoplayActive && isSectionVisible) {
         nextStep();
       }
     }, 5500);
