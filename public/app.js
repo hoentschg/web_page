@@ -348,10 +348,10 @@ function initSolutionCalculator(audioEngine) {
     } else if (selectedNeed === 'Soporte') {
       score = 98;
       items = [
-        'Centro de Operaciones de Seguridad (SOC) 24/7/365 activo',
-        'SLA garantizado de resolución crítica menor a 15 minutos',
-        'Monitoreo proactivo de servidores, bases de datos y red',
-        'Planes automatizados de Disaster Recovery & Failover'
+        'Soporte Técnico Híbrido: Remoto inmediato (TeamViewer) + Visitas in situ (Cochabamba)',
+        'Protocolo de resolución garantizada en 10 pasos con seguimiento post-incidente',
+        'Mantenimiento preventivo de estaciones de trabajo, servidores y optimización de discos',
+        'SLA crítico de respuesta garantizada menor a 15 min (Guardia SOC 24/7)'
       ];
     } else {
       score = 100;
@@ -655,6 +655,7 @@ function initLanguageSwitcher(audioEngine) {
   const translations = {
     es: {
       navServices: 'Servicios',
+      navProtocol: 'Protocolo Soporte',
       navSimulator: 'Simulador de Ataques',
       navDiagnostic: 'Diagnóstico',
       navAbout: 'Nosotros',
@@ -712,6 +713,7 @@ function initLanguageSwitcher(audioEngine) {
     },
     en: {
       navServices: 'Services',
+      navProtocol: 'Support Protocol',
       navSimulator: 'Attack Simulator',
       navDiagnostic: 'Diagnosis',
       navAbout: 'About Us',
@@ -786,12 +788,23 @@ function initLanguageSwitcher(audioEngine) {
 
     // Actualizar elementos clave de navegación
     const navLinks = document.querySelectorAll('.nav-links .nav-link');
-    if (navLinks.length >= 5) {
+    if (navLinks.length >= 6) {
       navLinks[0].textContent = dict.navServices;
-      navLinks[1].textContent = dict.navSimulator;
-      navLinks[2].textContent = dict.navDiagnostic;
-      navLinks[3].textContent = dict.navAbout;
-      navLinks[4].textContent = dict.navFaq;
+      navLinks[1].textContent = dict.navProtocol;
+      navLinks[2].textContent = dict.navSimulator;
+      navLinks[3].textContent = dict.navDiagnostic;
+      navLinks[4].textContent = dict.navAbout;
+      navLinks[5].textContent = dict.navFaq;
+    }
+
+    const mobileLabels = document.querySelectorAll('.mobile-nav-links .m-label');
+    if (mobileLabels.length >= 6) {
+      mobileLabels[0].textContent = dict.navServices;
+      mobileLabels[1].textContent = dict.navProtocol;
+      mobileLabels[2].textContent = dict.navSimulator;
+      mobileLabels[3].textContent = dict.navDiagnostic;
+      mobileLabels[4].textContent = dict.navAbout;
+      mobileLabels[5].textContent = dict.navFaq;
     }
 
     const headerCta = document.querySelector('#btn-header-cta span');
