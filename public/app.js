@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Interactive Solution Readiness Calculator
   initSolutionCalculator(audioEngine);
 
+  // 5.1 Interactive 10-Step Support Protocol Stepper
+  initSupportProtocolStepper(audioEngine);
+
   // 6. Contact / Incident Protocol Modal
   initContactModal(audioEngine);
 
@@ -400,6 +403,297 @@ function initSolutionCalculator(audioEngine) {
 
   // Initial calculation
   recalculate();
+}
+
+/* ==========================================================================
+   INTERACTIVE 10-STEP SUPPORT PROTOCOL STEPPER
+   ========================================================================== */
+function initSupportProtocolStepper(audioEngine) {
+  const nodeButtons = document.querySelectorAll('.stepper-node-btn');
+  const scenes = document.querySelectorAll('.step-visual-scene');
+  const progressFill = document.getElementById('protocol-progress-fill');
+  const badgeUI = document.getElementById('step-badge-ui');
+  const titleUI = document.getElementById('step-title-ui');
+  const slaUI = document.getElementById('step-sla-ui');
+  const descUI = document.getElementById('step-desc-ui');
+  const deliverablesUI = document.getElementById('step-deliverables-ui');
+  const counterLabel = document.getElementById('step-counter-label');
+  const hudBadge = document.getElementById('hud-stage-badge');
+  const prevBtn = document.getElementById('btn-proto-prev');
+  const nextBtn = document.getElementById('btn-proto-next');
+  const autoplayBtn = document.getElementById('btn-proto-autoplay');
+
+  if (!nodeButtons.length || !scenes.length) return;
+
+  const stepsData = {
+    1: {
+      badgeText: 'PASO 01 // CANAL DE ENTRADA',
+      badgeClass: 'tag-whatsapp',
+      title: 'Recepción del Reporte',
+      sla: 'CANAL: WHATSAPP (+591 69491000) • RESPUESTA < 15 MIN',
+      hudStatus: 'CANAL ACTIVO: WHATSAPP (+591 69491000)',
+      desc: 'El usuario o encargado de TI reporta la incidencia directamente al canal de guardia de Quimera adjuntando capturas del error, síntomas y contexto operativo.',
+      deliverables: [
+        { title: 'Acceso Inmediato:', desc: 'Sin contestadores automáticos ni formularios burocráticos.' },
+        { title: 'Asignación Automática:', desc: 'Apertura de ticket con código único y notificación a ingenieros.' },
+        { title: 'SLA en Marcha:', desc: 'Reloj contractual activado con garantía de respuesta menor a 15 min.' }
+      ]
+    },
+    2: {
+      badgeText: 'PASO 02 // TRIAJE & PRIORIZACIÓN',
+      badgeClass: 'tag-whatsapp',
+      title: 'Evaluación Inicial de Gravedad',
+      sla: 'SLA TRIAJE: RESOLUCIÓN DE DIAGNÓSTICO EN < 5 MINUTOS',
+      hudStatus: 'TRIAJE TÉCNICO EN CURSO: SOC L3 ASIGNADO',
+      desc: 'El equipo de guardia evalúa en tiempo real si el problema compromete la facturación, la base de datos o la continuidad operativa, determinando la ruta de solución.',
+      deliverables: [
+        { title: 'Clasificación de Severidad:', desc: 'Crítica, Alta o Media según afectación al negocio.' },
+        { title: 'Asignación de Especialista:', desc: 'Derivación inmediata a un Ingeniero Senior L3.' },
+        { title: 'Ruta Definida:', desc: 'Determinación instantánea entre asistencia remota o despliegue in situ.' }
+      ]
+    },
+    3: {
+      badgeText: 'PASO 03 // CONEXIÓN SEGURA',
+      badgeClass: 'tag-remote',
+      title: 'Acercamiento Remoto Inmediato',
+      sla: 'TECNOLOGÍA: ENLACE CIFRADO TEAMVIEWER / ANYDESK (AES-256)',
+      hudStatus: 'ENLACE REMOTO CIFRADO: CONECTADO A ESTACIÓN',
+      desc: 'Conexión cifrada a la estación o servidor afectado en segundos. El cliente puede observar en pantalla exactamente lo que el ingeniero analiza y ejecuta.',
+      deliverables: [
+        { title: 'Cero Latencia de Espera:', desc: 'Atención directa sin necesidad de traslados previos.' },
+        { title: 'Auditoría en Pantalla:', desc: 'El cliente supervisa en vivo cada comando y ventana intervenida.' },
+        { title: 'Diagnóstico Profundo:', desc: 'Revisión de consumo de CPU, logs de eventos, RAM y servicios de red.' }
+      ]
+    },
+    4: {
+      badgeText: 'PASO 04 // DECISIÓN DE VÍA',
+      badgeClass: 'tag-remote',
+      title: 'Solución Remota o Coordinación In Situ',
+      sla: 'EFICIENCIA: 75% CASOS RESUELTOS EN REMOTO • 25% DESPLIEGUE',
+      hudStatus: 'EVALUACIÓN DE VÍA OPERATIVA: DISPONIBLE',
+      desc: 'Si la falla es de software, configuración o parches, se resuelve a distancia en minutos. Si se detecta avería física de hardware o cableado, se activa la cuadrilla presencial.',
+      deliverables: [
+        { title: 'Resolución Ágil a Distancia:', desc: 'Minimiza el tiempo de inactividad de tus colaboradores.' },
+        { title: 'Coordinación Inmediata:', desc: 'Agendamiento y despacho con hora exacta acordada con el cliente.' },
+        { title: 'Sin Falsas Promesas:', desc: 'Si el hardware requiere reemplazo físico, no perdemos tiempo.' }
+      ]
+    },
+    5: {
+      badgeText: 'PASO 05 // DESPLIEGUE EN COCHABAMBA',
+      badgeClass: 'tag-onsite',
+      title: 'Visita Técnica Presencial (In Situ)',
+      sla: 'BASE OPERATIVA: AV. CONCORDIA → INSTALACIONES CLIENTE',
+      hudStatus: 'DESPLIEGUE EN RUTA: INGENIERO EN CAMINO',
+      desc: 'Un ingeniero especializado se traslada físicamente a tus oficinas con herramientas de diagnóstico de hardware, multímetros, testers de red y componentes de reemplazo.',
+      deliverables: [
+        { title: 'Presencia Física Experta:', desc: 'Atención cara a cara en tus instalaciones de Cochabamba.' },
+        { title: 'Intervención de Red & Hardware:', desc: 'Revisión directa de racks, switches, routers y estaciones.' },
+        { title: 'Kit de Emergencia:', desc: 'Repuestos temporales para levantar operaciones mientras se repara el equipo.' }
+      ]
+    },
+    6: {
+      badgeText: 'PASO 06 // CALIDAD & BENCHMARK',
+      badgeClass: 'tag-quality',
+      title: 'Pruebas Rigurosas & Verificación',
+      sla: 'TESTING: LATENCIA < 1MS • SMART 100% • RED ESTABLE',
+      hudStatus: 'PRUEBAS DE ESTRÉS COMPLETADAS: 0 ERRORES',
+      desc: 'No nos retiramos hasta verificar que todos los dispositivos funcionen armónicamente. Ejecutamos pruebas de estrés de red, acceso a bases de datos y velocidad de arranque.',
+      deliverables: [
+        { title: 'Simulación de Carga Real:', desc: 'Verificamos que el sistema soporte el uso intensivo de usuarios.' },
+        { title: 'Pruebas Cruzadas:', desc: 'Comprobamos impresión, internet, sincronización y ERP.' },
+        { title: 'Visto Bueno del Usuario:', desc: 'El responsable de la estación confirma el restablecimiento total.' }
+      ]
+    },
+    7: {
+      badgeText: 'PASO 07 // DEVOLUCIÓN AL CLIENTE',
+      badgeClass: 'tag-quality',
+      title: 'Comunicación Directa & Buenas Prácticas',
+      sla: 'CAPACITACIÓN PREVENTIVA: ORIENTACIÓN IN SITU Y GUÍA',
+      hudStatus: 'COMUNICACIÓN ENTREGADA: USUARIO ORIENTADO',
+      desc: 'Explicamos en lenguaje claro (sin tecnicismos innecesarios) qué originó el fallo y cómo el personal puede evitar prácticas de riesgo que provoquen el mismo síntoma.',
+      deliverables: [
+        { title: 'Transparencia Total:', desc: 'Conocerás exactamente la causa raíz de la falla.' },
+        { title: 'Capacitación Preventiva:', desc: 'Pautas de uso eficiente de discos, correos y contraseñas.' },
+        { title: 'Cultura de Resiliencia:', desc: 'Tus empleados se vuelven la primera línea de defensa.' }
+      ]
+    },
+    8: {
+      badgeText: 'PASO 08 // DOCUMENTACIÓN OFICIAL',
+      badgeClass: 'tag-guarantee',
+      title: 'Cierre de Incidente en Bitácora',
+      sla: 'REGISTRO DIGITAL: HASH CRIPTOGRÁFICO INMUTABLE',
+      hudStatus: 'BITÁCORA REGISTRADA: INFORME TÉCNICO LISTO',
+      desc: 'El ticket se cierra formalmente y se genera un reporte técnico detallado con horas de intervención, piezas modificadas y recomendaciones archivadas en el historial de tu empresa.',
+      deliverables: [
+        { title: 'Historial Centralizado:', desc: 'Trazabilidad completa de cada computadora de tu empresa.' },
+        { title: 'Auditable para Gerencia:', desc: 'Informes claros para justificar mantenimiento o inversiones.' },
+        { title: 'Cierre Formal Garantizado:', desc: 'Firma de conformidad del encargado de área.' }
+      ]
+    },
+    9: {
+      badgeText: 'PASO 09 // CONTROL POST-RESOLUCIÓN',
+      badgeClass: 'tag-guarantee',
+      title: 'Seguimiento Post-Resolución (48 Horas)',
+      sla: 'GARANTÍA: MONITOREO ACTIVO POSTERIOR DE ESTABILIDAD',
+      hudStatus: 'MONITOR HEARTBEAT ACTIVO: UPTIME 100.00%',
+      desc: 'A las 24 y 48 horas de resuelto el caso, nuestro equipo de soporte contacta al usuario y monitorea la telemetría para comprobar que el problema no haya tenido efectos secundarios.',
+      deliverables: [
+        { title: 'Garantía Cero Reincidencia:', desc: 'Si el problema reaparece, la atención es de máxima prioridad.' },
+        { title: 'Chequeo Proactivo:', desc: 'No esperamos a que vuelvas a llamar; nosotros verificamos.' },
+        { title: 'Paz Mental para la Dirección:', desc: 'La operación continúa sin sobresaltos ni temores.' }
+      ]
+    },
+    10: {
+      badgeText: 'PASO 10 // BLINDAJE PROACTIVO',
+      badgeClass: 'tag-guarantee',
+      title: 'Auditoría & Mejora Continua',
+      sla: 'SEGURIDAD INTEGRAL: ACTUALIZACIÓN DE POLÍTICAS',
+      hudStatus: 'PERÍMETRO BLINDADO: NIVEL ÉLITE 100%',
+      desc: 'Cada incidente resuelto retroalimenta nuestro sistema de mantenimiento preventivo. Ajustamos políticas de firewall, antivirus y backups para que esa vulnerabilidad quede sellada para siempre.',
+      deliverables: [
+        { title: 'Prevención Definitiva:', desc: 'Convertimos un problema puntual en una defensa permanente.' },
+        { title: 'Actualización de Parches:', desc: 'Cierre de brechas antes de que otros equipos se vean afectados.' },
+        { title: 'Evolución Constante:', desc: 'Tu empresa se vuelve más robusta y segura cada mes.' }
+      ]
+    }
+  };
+
+  let currentStep = 1;
+  let autoplayInterval = null;
+  let isAutoplayActive = true;
+
+  function renderStep(step) {
+    currentStep = step;
+    const data = stepsData[step];
+    if (!data) return;
+
+    // 1. Progress Bar Fill
+    if (progressFill) {
+      progressFill.style.width = `${step * 10}%`;
+    }
+
+    // 2. Active pill in track
+    nodeButtons.forEach((btn) => {
+      const btnStep = parseInt(btn.getAttribute('data-step'), 10);
+      if (btnStep === step) {
+        btn.classList.add('active');
+        btn.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // 3. Active Visual Scene
+    scenes.forEach((scene) => {
+      const sceneStep = parseInt(scene.getAttribute('data-scene'), 10);
+      if (sceneStep === step) {
+        scene.classList.add('active');
+      } else {
+        scene.classList.remove('active');
+      }
+    });
+
+    // 4. Update HUD Topbar Status
+    if (hudBadge) {
+      hudBadge.innerHTML = `<span class="status-dot"></span><span>${data.hudStatus}</span>`;
+    }
+
+    // 5. Update Right Detail Pane Text
+    if (badgeUI) {
+      badgeUI.className = `step-cat-badge ${data.badgeClass}`;
+      badgeUI.textContent = data.badgeText;
+    }
+    if (titleUI) {
+      titleUI.textContent = data.title;
+    }
+    if (slaUI) {
+      slaUI.innerHTML = `<span class="status-dot"></span><span>${data.sla}</span>`;
+    }
+    if (descUI) {
+      descUI.textContent = data.desc;
+    }
+    if (counterLabel) {
+      counterLabel.textContent = `Paso ${step} de 10`;
+    }
+
+    // 6. Deliverables list
+    if (deliverablesUI) {
+      deliverablesUI.innerHTML = data.deliverables
+        .map(
+          (d) => `
+        <div class="deliverable-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>${d.title}</strong> ${d.desc}</span>
+        </div>
+      `
+        )
+        .join('');
+    }
+  }
+
+  function nextStep() {
+    const next = currentStep < 10 ? currentStep + 1 : 1;
+    if (audioEngine) audioEngine.playUiTick();
+    renderStep(next);
+  }
+
+  function prevStep() {
+    const prev = currentStep > 1 ? currentStep - 1 : 10;
+    if (audioEngine) audioEngine.playUiTick();
+    renderStep(prev);
+  }
+
+  function startAutoplay() {
+    if (autoplayInterval) clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(() => {
+      if (isAutoplayActive) {
+        nextStep();
+      }
+    }, 5500);
+  }
+
+  function stopAutoplay() {
+    if (autoplayInterval) clearInterval(autoplayInterval);
+    autoplayInterval = null;
+  }
+
+  // Bind node buttons
+  nodeButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const step = parseInt(btn.getAttribute('data-step'), 10);
+      if (audioEngine) audioEngine.playUiTick();
+      renderStep(step);
+    });
+  });
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextStep();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevStep();
+    });
+  }
+
+  if (autoplayBtn) {
+    autoplayBtn.addEventListener('click', () => {
+      isAutoplayActive = !isAutoplayActive;
+      if (isAutoplayActive) {
+        autoplayBtn.innerHTML = '⏸ Pausar';
+        startAutoplay();
+      } else {
+        autoplayBtn.innerHTML = '⏵ Reproducir';
+        stopAutoplay();
+      }
+    });
+  }
+
+  // Initial render & autoplay
+  renderStep(1);
+  startAutoplay();
 }
 
 /* ==========================================================================

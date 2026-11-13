@@ -562,117 +562,336 @@
       </section>
 
       <!-- ====================================================================
-           SUPPORT PROTOCOL 10 STEPS (Plan de Acción de Soporte Quimera)
+           SUPPORT PROTOCOL 10 STEPS (Consola Interactiva Quimera)
            ==================================================================== -->
       <section class="section-padding" id="protocolo-soporte">
         <div class="section-wrap">
           <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <span class="section-tag">METODOLOGÍA DE MISIÓN CRÍTICA</span>
-            <h2 class="section-heading">Protocolo de Soporte Técnico en 10 Pasos</h2>
+            <span class="section-tag">METODOLOGÍA DE MISIÓN CRÍTICA // EN VIVO</span>
+            <h2 class="section-heading">Protocolo Interactivo de Soporte en 10 Pasos</h2>
             <p class="section-subheading" style="margin: 0 auto;">
-              Del primer mensaje a la solución garantizada. Combinamos atención remota instantánea con despliegue técnico presencial en tus oficinas.
+              Explora cómo respondemos ante cualquier incidencia técnica. Desde el primer mensaje por WhatsApp hasta la resolución presencial garantizada.
             </p>
           </div>
 
-          <div class="protocol-grid">
-            <!-- Paso 1 -->
-            <div class="protocol-card">
-              <div class="protocol-card-header">
-                <span class="protocol-step-num">01</span>
-                <span class="protocol-step-tag tag-whatsapp">WhatsApp</span>
+          <div class="protocol-console-wrapper">
+            <!-- Stepper Track / Scrubber Bar -->
+            <div class="protocol-track-container">
+              <div class="protocol-progress-bar-wrap">
+                <div class="protocol-progress-fill" id="protocol-progress-fill" style="width: 10%;"></div>
               </div>
-              <h4 class="protocol-card-title">Recepción del Reporte</h4>
-              <p class="protocol-card-desc">Reporte directo al canal técnico de Quimera (+591 69491000) con capturas de pantalla y descripción del síntoma.</p>
+
+              <div class="protocol-nav-pills" id="protocol-nav-pills">
+                <button class="stepper-node-btn active" data-step="1">
+                  <span class="node-num">01</span>
+                  <span class="node-label">WhatsApp</span>
+                </button>
+                <button class="stepper-node-btn" data-step="2">
+                  <span class="node-num">02</span>
+                  <span class="node-label">Triaje</span>
+                </button>
+                <button class="stepper-node-btn" data-step="3">
+                  <span class="node-num">03</span>
+                  <span class="node-label">Remoto</span>
+                </button>
+                <button class="stepper-node-btn" data-step="4">
+                  <span class="node-num">04</span>
+                  <span class="node-label">Decisión</span>
+                </button>
+                <button class="stepper-node-btn" data-step="5">
+                  <span class="node-num">05</span>
+                  <span class="node-label">In Situ</span>
+                </button>
+                <button class="stepper-node-btn" data-step="6">
+                  <span class="node-num">06</span>
+                  <span class="node-label">Pruebas</span>
+                </button>
+                <button class="stepper-node-btn" data-step="7">
+                  <span class="node-num">07</span>
+                  <span class="node-label">Feedback</span>
+                </button>
+                <button class="stepper-node-btn" data-step="8">
+                  <span class="node-num">08</span>
+                  <span class="node-label">Bitácora</span>
+                </button>
+                <button class="stepper-node-btn" data-step="9">
+                  <span class="node-num">09</span>
+                  <span class="node-label">Garantía</span>
+                </button>
+                <button class="stepper-node-btn" data-step="10">
+                  <span class="node-num">10</span>
+                  <span class="node-label">Mejora</span>
+                </button>
+              </div>
             </div>
 
-            <!-- Paso 2 -->
-            <div class="protocol-card">
-              <div class="protocol-card-header">
-                <span class="protocol-step-num">02</span>
-                <span class="protocol-step-tag tag-whatsapp">Triaje</span>
-              </div>
-              <h4 class="protocol-card-title">Evaluación Inicial</h4>
-              <p class="protocol-card-desc">Clasificación técnica de gravedad en menos de 5 min. Se determina si amerita asistencia remota o despliegue en persona.</p>
-            </div>
+            <!-- Main Interactive Console Stage -->
+            <div class="protocol-stage-grid">
+              
+              <!-- Left Visual Pane: Simulated Stage HUD -->
+              <div class="protocol-visual-pane">
+                <div class="hud-topbar">
+                  <div class="hud-window-controls">
+                    <span class="sim-dot red"></span>
+                    <span class="sim-dot yellow"></span>
+                    <span class="sim-dot green"></span>
+                  </div>
+                  <div class="hud-telemetry-badge" id="hud-stage-badge">
+                    <span class="status-dot"></span>
+                    <span>CANAL ACTIVO: WHATSAPP (+591 69491000)</span>
+                  </div>
+                </div>
 
-            <!-- Paso 3 -->
-            <div class="protocol-card">
-              <div class="protocol-card-header">
-                <span class="protocol-step-num">03</span>
-                <span class="protocol-step-tag tag-remote">Remoto</span>
-              </div>
-              <h4 class="protocol-card-title">Acercamiento Remoto</h4>
-              <p class="protocol-card-desc">Conexión cifrada vía TeamViewer / AnyDesk para diagnóstico en vivo guiado directamente junto al usuario.</p>
-            </div>
+                <div class="scene-container">
+                  <!-- Visual Scene 1: WhatsApp -->
+                  <div class="step-visual-scene active" data-scene="1">
+                    <div class="hud-chat-bubble">
+                      <div class="hud-chat-meta">
+                        <span>CLIENTE // REPORTE URGENTE</span>
+                        <span>HOY 14:32</span>
+                      </div>
+                      <p style="margin: 0; color: #fff;">
+                        "Hola Quimera, nuestro servidor principal no responde y los equipos de facturación no tienen acceso a la base de datos. Adjunto captura del error."
+                      </p>
+                    </div>
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">TICKET ASIGNADO:</span>
+                      <span class="hud-diag-val hud-status-cyan">#QM-8492 // PRIORIDAD ALTA</span>
+                    </div>
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">TIEMPO TRANSCURRIDO:</span>
+                      <span class="hud-diag-val hud-status-good">00:48 seg (SLA &lt; 15 min)</span>
+                    </div>
+                  </div>
 
-            <!-- Paso 4 -->
-            <div class="protocol-card">
-              <div class="protocol-card-header">
-                <span class="protocol-step-num">04</span>
-                <span class="protocol-step-tag tag-remote">Resolución</span>
-              </div>
-              <h4 class="protocol-card-title">Solución o Coordinación</h4>
-              <p class="protocol-card-desc">Si se soluciona a distancia, se valida inmediatamente; si requiere intervención de hardware o red, se agenda visita física urgente.</p>
-            </div>
+                  <!-- Visual Scene 2: Triaje -->
+                  <div class="step-visual-scene" data-scene="2">
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">NIVEL DE SEVERIDAD:</span>
+                      <span class="hud-diag-val hud-status-critical">CRÍTICO (IMPACTO EN OPERACIÓN)</span>
+                    </div>
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">INGENIERO ASIGNADO:</span>
+                      <span class="hud-diag-val hud-status-cyan">ING. SENIOR DE GUARDIA (SOC L3)</span>
+                    </div>
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">DIAGNÓSTICO PRELIMINAR:</span>
+                      <span class="hud-diag-val hud-status-good">CONFLICTO DE CONECTIVIDAD / RED</span>
+                    </div>
+                    <div class="hud-code-terminal">
+                      &gt; PROTOCOLO TRIAJE EJECUTADO EN 2.4 MIN<br>
+                      &gt; ACCIÓN RECOMENDADA: CONEXIÓN REMOTA INMEDIATA TLS 1.3
+                    </div>
+                  </div>
 
-            <!-- Paso 5 -->
-            <div class="protocol-card">
-              <div class="protocol-card-header">
-                <span class="protocol-step-num">05</span>
-                <span class="protocol-step-tag tag-onsite">In Situ</span>
-              </div>
-              <h4 class="protocol-card-title">Visita Presencial</h4>
-              <p class="protocol-card-desc">Ingeniero especializado se traslada físicamente a tus instalaciones para intervenir equipos, servidores o infraestructura.</p>
-            </div>
+                  <!-- Visual Scene 3: Remoto -->
+                  <div class="step-visual-scene" data-scene="3">
+                    <div class="hud-code-terminal">
+                      &gt; INICIANDO SESIÓN CIFRADA TEAMVIEWER / ANYDESK...<br>
+                      &gt; HOST: 192.168.1.10 [SRV-CORE-01]<br>
+                      &gt; ESTADO: ENLACE REMOTO CIFRADO (AES-256)<br>
+                      &gt; ESCANEANDO REGISTRO DE EVENTOS &amp; SERVICIOS DE RED...<br>
+                      &gt; CAUSA DETECTADA: SERVICIO DHCP BLOQUEADO
+                    </div>
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">ESTADO DE TELEMETRÍA:</span>
+                      <span class="hud-diag-val hud-status-good">REMOTO CONECTADO • ESTABLE</span>
+                    </div>
+                  </div>
 
-            <!-- Paso 6 -->
-            <div class="protocol-card">
-              <div class="protocol-card-header">
-                <span class="protocol-step-num">06</span>
-                <span class="protocol-step-tag tag-quality">Pruebas</span>
-              </div>
-              <h4 class="protocol-card-title">Pruebas & Verificación</h4>
-              <p class="protocol-card-desc">Tests de estrés y funcionalidad en el lugar para garantizar que el sistema opera con total estabilidad y rendimiento.</p>
-            </div>
+                  <!-- Visual Scene 4: Decisión -->
+                  <div class="step-visual-scene" data-scene="4">
+                    <div class="hud-diag-meter" style="border-color: rgba(0, 245, 212, 0.4);">
+                      <div>
+                        <div style="font-weight: 700; color: #fff;">VÍA A: RESOLUCIÓN REMOTA (75%)</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted);">Reinicio de daemons, parches y configuración de software.</div>
+                      </div>
+                      <span class="hud-diag-val hud-status-good">DISPONIBLE</span>
+                    </div>
+                    <div class="hud-diag-meter" style="border-color: rgba(168, 85, 247, 0.4);">
+                      <div>
+                        <div style="font-weight: 700; color: #fff;">VÍA B: VISITA IN SITU (25%)</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted);">Fallo físico de switch, disco averiado o cableado cortado.</div>
+                      </div>
+                      <span class="hud-diag-val hud-status-purple">DESPLIEGUE URGENTE</span>
+                    </div>
+                  </div>
 
-            <!-- Paso 7 -->
-            <div class="protocol-card">
-              <div class="protocol-card-header">
-                <span class="protocol-step-num">07</span>
-                <span class="protocol-step-tag tag-quality">Usuario</span>
-              </div>
-              <h4 class="protocol-card-title">Comunicación Directa</h4>
-              <p class="protocol-card-desc">Explicación clara de la causa raíz y pautas de buenas prácticas para evitar que el fallo vuelva a producirse.</p>
-            </div>
+                  <!-- Visual Scene 5: In Situ -->
+                  <div class="step-visual-scene" data-scene="5">
+                    <div class="hud-map-radar">
+                      <div class="hud-radar-beacon">📍</div>
+                      <div style="font-weight: 800; color: #fff; font-size: 1.05rem; margin-bottom: 0.25rem;">
+                        COCHABAMBA • DESPLIEGUE EN RUTA
+                      </div>
+                      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan-bright);">
+                        BASE OPERATIVA AV. CONCORDIA → INSTALACIONES CLIENTE
+                      </div>
+                    </div>
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">EQUIPO DE CAMPO:</span>
+                      <span class="hud-diag-val hud-status-cyan">HERRAMENTAL DE TEST &amp; HARDWARE DE REPUESTO</span>
+                    </div>
+                  </div>
 
-            <!-- Paso 8 -->
-            <div class="protocol-card">
-              <div class="protocol-card-header">
-                <span class="protocol-step-num">08</span>
-                <span class="protocol-step-tag tag-guarantee">Documentado</span>
-              </div>
-              <h4 class="protocol-card-title">Cierre de Incidente</h4>
-              <p class="protocol-card-desc">Registro en la bitácora técnica de la empresa con fecha, acciones tomadas y componentes actualizados.</p>
-            </div>
+                  <!-- Visual Scene 6: Pruebas -->
+                  <div class="step-visual-scene" data-scene="6">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                      <div class="hud-diag-meter">
+                        <span class="hud-diag-label">LATENCIA LAN:</span>
+                        <span class="hud-diag-val hud-status-good">&lt; 1 ms (OK)</span>
+                      </div>
+                      <div class="hud-diag-meter">
+                        <span class="hud-diag-label">ESTADO DISCOS:</span>
+                        <span class="hud-diag-val hud-status-good">SMART 100%</span>
+                      </div>
+                      <div class="hud-diag-meter">
+                        <span class="hud-diag-label">POOL DHCP:</span>
+                        <span class="hud-diag-val hud-status-good">RESTABLECIDO</span>
+                      </div>
+                      <div class="hud-diag-meter">
+                        <span class="hud-diag-label">INTEGRIDAD:</span>
+                        <span class="hud-diag-val hud-status-good">100% OPERATIVO</span>
+                      </div>
+                    </div>
+                    <div class="hud-code-terminal">
+                      &gt; PRUEBAS DE ESTRÉS COMPLETADAS: 0 PAQUETES PERDIDOS.<br>
+                      &gt; TERMINALES DE FACTURACIÓN CONECTADAS CON ÉXITO.
+                    </div>
+                  </div>
 
-            <!-- Paso 9 -->
-            <div class="protocol-card">
-              <div class="protocol-card-header">
-                <span class="protocol-step-num">09</span>
-                <span class="protocol-step-tag tag-guarantee">Garantía</span>
-              </div>
-              <h4 class="protocol-card-title">Seguimiento Post-Resolución</h4>
-              <p class="protocol-card-desc">Monitoreo de control posterior para certificar que el rendimiento se mantiene óptimo y sin anomalías residuales.</p>
-            </div>
+                  <!-- Visual Scene 7: Feedback -->
+                  <div class="step-visual-scene" data-scene="7">
+                    <div class="hud-chat-bubble" style="border-color: rgba(0, 245, 212, 0.4); background: rgba(0, 245, 212, 0.05);">
+                      <div class="hud-chat-meta">
+                        <span style="color: var(--accent-cyan-bright);">INGENIERO QUIMERA // DEVOLUCIÓN TÉCNICA</span>
+                        <span>RESOLUCIÓN</span>
+                      </div>
+                      <p style="margin: 0; color: #fff;">
+                        "Estimado cliente: Se neutralizó el fallo de duplicidad de red y se optimizó el servicio DHCP. Adicionalmente dejamos aislada la subred de impresoras para prevenir futuros bloqueos."
+                      </p>
+                    </div>
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">PAUTA PREVENTIVA ENTREGADA:</span>
+                      <span class="hud-diag-val hud-status-good">VERIFICADA POR ENCARGADO</span>
+                    </div>
+                  </div>
 
-            <!-- Paso 10 -->
-            <div class="protocol-card">
-              <div class="protocol-card-header">
-                <span class="protocol-step-num">10</span>
-                <span class="protocol-step-tag tag-guarantee">Auditoría</span>
+                  <!-- Visual Scene 8: Bitácora -->
+                  <div class="step-visual-scene" data-scene="8">
+                    <div class="hud-code-terminal">
+                      ================ BITÁCORA TÉCNICA DIGITAL ================<br>
+                      ID INCIDENTE: QM-2026-8492-RES<br>
+                      RESOLUCIÓN: EXITOSA (REMOTO + AJUSTE IN SITU)<br>
+                      HASH CRIPTOGRÁFICO: 4f8b9e...01c7d (INMUTABLE)<br>
+                      TIEMPO TOTAL RESPUESTA: 12 MINUTOS (DENTRO DE SLA)<br>
+                      INFORME TÉCNICO GENERADO &amp; ARCHIVADO.
+                    </div>
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">ESTADO DEL TICKET:</span>
+                      <span class="hud-diag-val hud-status-good">CERRADO FORMALMENTE</span>
+                    </div>
+                  </div>
+
+                  <!-- Visual Scene 9: Garantía -->
+                  <div class="step-visual-scene" data-scene="9">
+                    <div style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1.25rem;">
+                      <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; color: #10b981;">
+                        <span>TELEMETRÍA 48 HORAS POST-INCIDENTE</span>
+                        <span>UPTIME: 100.00%</span>
+                      </div>
+                      <svg class="hud-ecg-heartbeat" viewBox="0 0 500 70">
+                        <path d="M0,35 L120,35 L135,10 L150,60 L165,20 L180,45 L195,35 L320,35 L335,12 L350,58 L365,22 L380,42 L395,35 L500,35"/>
+                      </svg>
+                    </div>
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">SEGUIMIENTO DE CONTROL:</span>
+                      <span class="hud-diag-val hud-status-good">REINCIDENCIA ZERO // CONFIRMADA</span>
+                    </div>
+                  </div>
+
+                  <!-- Visual Scene 10: Mejora -->
+                  <div class="step-visual-scene" data-scene="10">
+                    <div style="text-align: center; padding: 1.5rem; background: radial-gradient(circle, rgba(0, 245, 212, 0.12) 0%, transparent 70%); border: 1px solid rgba(0, 245, 212, 0.3); border-radius: 14px;">
+                      <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🛡️</div>
+                      <div style="font-weight: 800; font-size: 1.25rem; color: #fff; margin-bottom: 0.25rem;">
+                        PERÍMETRO BLINDADO // NIVEL ÉLITE
+                      </div>
+                      <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan-bright);">
+                        PLAN PREVENTIVO APLICADO: CERO VULNERABILIDADES RESIDUALES
+                      </div>
+                    </div>
+                    <div class="hud-diag-meter">
+                      <span class="hud-diag-label">RESILIENCIA EMPRESARIAL:</span>
+                      <span class="hud-diag-val hud-status-cyan">+100% CAPACIDAD DE CONTINUIDAD</span>
+                    </div>
+                  </div>
+
+                </div>
               </div>
-              <h4 class="protocol-card-title">Mejora Continua</h4>
-              <p class="protocol-card-desc">Ajuste de políticas y planes de mantenimiento preventivo para blindar la operación contra futuros imprevistos.</p>
+
+              <!-- Right Detail Pane: Narrative & Interactive Controls -->
+              <div class="protocol-info-pane">
+                <div>
+                  <div class="step-cat-badge tag-whatsapp" id="step-badge-ui">
+                    PASO 01 // CANAL DE ENTRADA
+                  </div>
+
+                  <h3 class="step-main-title" id="step-title-ui">
+                    Recepción del Reporte
+                  </h3>
+
+                  <div class="step-sla-text" id="step-sla-ui">
+                    <span class="status-dot"></span>
+                    <span>CANAL: WHATSAPP (+591 69491000) • RESPUESTA &lt; 15 MIN</span>
+                  </div>
+
+                  <p class="step-main-desc" id="step-desc-ui">
+                    El usuario o encargado de TI reporta el incidente directamente al canal de guardia de Quimera adjuntando capturas del error y síntomas observados.
+                  </p>
+
+                  <div class="step-deliverables-list" id="step-deliverables-ui">
+                    <div class="deliverable-item">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      <span><strong>Acceso Inmediato:</strong> Sin contestadores automáticos ni formularios burocráticos.</span>
+                    </div>
+                    <div class="deliverable-item">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      <span><strong>Asignación Automática:</strong> Apertura de ticket con código único y notificación a ingenieros.</span>
+                    </div>
+                    <div class="deliverable-item">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      <span><strong>SLA en Marcha:</strong> Reloj contractual activado con garantía de respuesta menor a 15 min.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom Controller Bar -->
+                <div class="protocol-controller-bar">
+                  <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <button class="protocol-ctrl-btn" id="btn-proto-prev" aria-label="Paso anterior">
+                      ← Anterior
+                    </button>
+                    <button class="protocol-ctrl-btn" id="btn-proto-autoplay" title="Pausar o iniciar recorrido automático">
+                      ⏸ Pausar
+                    </button>
+                    <button class="protocol-ctrl-btn" id="btn-proto-next" aria-label="Siguiente paso">
+                      Siguiente →
+                    </button>
+                  </div>
+
+                  <div class="step-count-indicator" id="step-counter-label">
+                    Paso 1 de 10
+                  </div>
+
+                  <a href="https://wa.me/59169491000?text=Hola%20Quimera,%20quisiera%20activar%20el%20protocolo%20de%20soporte%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn-pill-primary" style="font-size: 0.8rem; padding: 0.55rem 1.1rem; text-decoration: none;">
+                    <span>Contactar Guardia 24/7</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+
+              </div>
+
             </div>
           </div>
         </div>
